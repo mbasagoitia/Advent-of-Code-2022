@@ -1,23 +1,13 @@
- let one = ["N", "Q", "L", "S", "C", "Z", "P", "T"];
- let two = ["G", "C", "H", "V", "T", "P", "L"];
- let three = ["F", "Z", "C", "D"];
- let four = ["C", "V", "M", "L", "D", "T", "W", "G"];
- let five = ["C", "W", "P"];
- let six = ["Z", "S", "T", "C", "D", "J", "F", "P"];
- let seven = ["D", "B", "G", "W", "V"];
- let eight = ["W", "H", "Q", "S", "J", "N"];
- let nine = ["V", "L", "S", "F", "Q", "C", "R"];
-
  let stacks = {
-    1: one,
-    2: two,
-    3: three,
-    4: four,
-    5: five,
-    6: six,
-    7: seven,
-    8: eight,
-    9: nine
+    1: ["N", "Q", "L", "S", "C", "Z", "P", "T"],
+    2: ["G", "C", "H", "V", "T", "P", "L"],
+    3: ["F", "Z", "C", "D"],
+    4: ["C", "V", "M", "L", "D", "T", "W", "G"],
+    5: ["C", "W", "P"],
+    6: ["Z", "S", "T", "C", "D", "J", "F", "P"],
+    7: ["D", "B", "G", "W", "V"],
+    8: ["W", "H", "Q", "S", "J", "N"],
+    9: ["V", "L", "S", "F", "Q", "C", "R"]
  };
 
  let instructions = [];
@@ -35,7 +25,12 @@
         moveBoxes(instruction);
     })
 
-    console.log(stacks);
+    let boxOrder = [];
+    for (let stack in stacks) {
+        boxOrder.push(stacks[stack][0]);
+    }
+    let answer = boxOrder.join("");
+    console.log(answer);
 
 });
 
