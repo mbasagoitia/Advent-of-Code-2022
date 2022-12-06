@@ -23,10 +23,10 @@ function findMarker(str, idx) {
 fetch("https://adventofcode.com/2022/day/6/input")
 .then(res => res.text())
 .then((data) => {
-    findMarker(data, 0);
+    findMarker2(data, 0);
 });
 
-function findMarker(str, idx) {
+function findMarker2(str, idx) {
     let subString = str.substr(idx, 14);
     if (Array.from(new Set([subString[0], subString[1], subString[2], subString[3], subString[4], subString[5], subString[6], subString[7], subString[8], subString[9], subString[10], subString[11], subString[12], subString[13]])).length === 14) {
         console.log(idx + 14);
@@ -35,6 +35,6 @@ function findMarker(str, idx) {
         console.log("no markers found");
         return;
     } else {
-        findMarker(str, idx+1);
+        findMarker2(str, idx+1);
     }
 }
